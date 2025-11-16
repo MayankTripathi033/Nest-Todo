@@ -2,7 +2,7 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Post, UseGuards, Request }
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-import { UsersService } from 'src/users/users.service';
+import { UsersService } from '../users/users.service';
 import type { User } from '@prisma/client';
 
 @ApiTags('Authentication')
