@@ -50,4 +50,5 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 3001
 
 # The real DATABASE_URL will be provided at runtime
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/src/main"]
+# Skip migrations if database is already set up
+CMD ["node", "dist/src/main"]
