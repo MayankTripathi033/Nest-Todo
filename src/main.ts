@@ -18,6 +18,13 @@ async function createApp() {
     new ExpressAdapter(expressApp),
   );
   
+  // Enable CORS
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
+  
   // Swagger configuration
   const config = new DocumentBuilder()
     .setTitle('Todo API')
@@ -50,6 +57,13 @@ async function createApp() {
 // For local development
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
+  // Enable CORS
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
   
   // Swagger configuration
   const config = new DocumentBuilder()
