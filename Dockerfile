@@ -51,4 +51,4 @@ EXPOSE 3001
 
 # The real DATABASE_URL will be provided at runtime
 # Skip migrations if database is already set up
-CMD ["node", "dist/src/main"]
+CMD ["node", "dist/main"]
